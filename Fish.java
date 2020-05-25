@@ -7,8 +7,9 @@ import javax.swing.JButton;
 
 public class Fish extends JButton
 {
-
-	private Rectangle fish = new Rectangle(0,0,(int)((Math.random()*300)+30),(int)((Math.random()*200)+30));
+	//The fish are only rectangles right now, maybe we can make them look better at the end, but i think its fine for now
+	
+	private Rectangle fish = new Rectangle(0,0,(int)((Math.random()*200)+30),(int)((Math.random()*100)+30));
 	
 	public Fish()
 	{
@@ -19,6 +20,8 @@ public class Fish extends JButton
 	public void paintComponent(Graphics  g)
 	{
 		Graphics2D g2 = (Graphics2D) g;
+		
+		//The fish are only red right now to make it easier to find them
 		g2.setColor(Color.RED);
 		g2.fill(fish);
 	}

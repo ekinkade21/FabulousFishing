@@ -22,6 +22,8 @@ public class FishingMain extends JFrame
 		CardLayout cl = new CardLayout();
 		overall.setLayout(cl);
 		
+		//We can make this look better visually later
+		
 		JPanel startScreen = new JPanel();
 		startScreen.setSize(1000, 800);
 		startScreen.setLayout(new GridBagLayout());
