@@ -1,5 +1,6 @@
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,8 +21,31 @@ public class Pond extends JPanel implements ActionListener
 		 *  I was planning on adding 3 fish initially.
 		 */
 		Fish f1 = new Fish();
-		f1.setLocation((int)Math.random()*this.getWidth(), (int)Math.random()*this.getHeight());
+		f1.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight())); //edited this line so that the location would be random (the cast caused the Math.random() to always be 0)
 		this.add(f1);
+		
+		/*
+		 * Added an actionListener to the fish that causes it to change location and size according to initial bounds
+		 * Need to add code to make sure it doesn't stretch off of the screen
+		 * If you want, you can add code to change the card displayed or create some sort of integer that increments to count the number of fish caught
+		 * 	You could make it so that once a certain amount of fish are caught, the congratulations screen pops up.
+		 * I'm not sure how to do it, but we need to repaint the object so that it fills the new bounds (i.e. if the previous fish was 50x50 and the new one is 100x100, only 50x50 out of the total area is painted.)
+		 * 
+		 * I think just using an actionListener would be easier than a cursor, but either would work; it's just preference
+		 * -Casey
+		 */
+		
+		f1.addActionListener(new ActionListener()
+				{
+
+					public void actionPerformed(ActionEvent e) {
+						f1.setSize((int)((Math.random()*200)+30),(int)((Math.random()*100)+30));
+						f1.setLocation((int)(Math.random()*getWidth()), (int)(Math.random()*getHeight()));
+						
+						
+					}
+			
+				});
 	
 	/*
 	 * Since I made the Fish extend JButtons, we can add ActionListeners to them so that they make a JPanel that pops uo that says "Congrats!" or something like that
