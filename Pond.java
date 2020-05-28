@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Pond extends JPanel implements ActionListener
@@ -18,6 +19,10 @@ public class Pond extends JPanel implements ActionListener
 		this.setSize(1000, 800);
 		this.setLayout(null);
 		this.setBackground(Color.CYAN);
+		
+		JLabel score = new JLabel("Fish Caught: "+numCaught);
+		score.setBounds(850,10,100,40);
+		add(score);
 		
 		/*
 		 *  I am trying to make a fish that is a random size within reason, and a random location, without getting out of bounds
@@ -46,6 +51,7 @@ public class Pond extends JPanel implements ActionListener
 					public void actionPerformed(ActionEvent e) {
 						
 						numCaught++;
+						score.setText("Fish Caught: "+numCaught);
 						
 						if (numCaught>=10)
 						{
