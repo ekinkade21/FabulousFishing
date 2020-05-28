@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Pond extends JPanel implements ActionListener
+public class Pond extends JPanel 
 {
 	private int numCaught;
 	
@@ -30,9 +30,105 @@ public class Pond extends JPanel implements ActionListener
 		 *  of it in this class.
 		 *  I was planning on adding 3 fish initially.
 		 */
+		
+		//trying to make it invisble but still clickable
+		// This makes the game super hard btw, so maybe we shouldnt do it? what do you think
+		// Right now you only need 3 fish to win
+		
+		//the setBorderPainted is set to True for now, but if you want fish to be invisible, you set all 3 fish to false for the border
 		Fish f1 = new Fish();
-		f1.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight())); //edited this line so that the location would be random (the cast caused the Math.random() to always be 0)
-		this.add(f1);
+		f1.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight())); 
+		f1.setOpaque(false);
+		f1.setContentAreaFilled(false);
+		f1.setBorderPainted(true);
+		add(f1);
+		f1.addActionListener(new ActionListener()
+				{
+
+					public void actionPerformed(ActionEvent e) {
+						
+						numCaught++;
+						score.setText("Fish Caught: "+numCaught);
+						
+						if (numCaught>=3)
+						{
+							numCaught=0;
+							score.setText("Fish Caught: 0");
+							cl.show(containedIn,"Congrats");
+						}
+						
+						f1.setSize((int)((Math.random()*200)+30),(int)((Math.random()*100)+30));
+						f1.setLocation((int)(Math.random()*getWidth()), (int)(Math.random()*getHeight()));
+						
+						
+					}
+			
+				});
+		Fish f2 = new Fish();
+		f2.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight())); 
+		f2.setOpaque(false);
+		f2.setContentAreaFilled(false);
+		f2.setBorderPainted(true);
+		add(f2);
+		f2.addActionListener(new ActionListener()
+				{
+
+					public void actionPerformed(ActionEvent e) {
+						
+						numCaught++;
+						score.setText("Fish Caught: "+numCaught);
+						
+						if (numCaught>=3)
+						{
+							numCaught=0;
+							score.setText("Fish Caught: 0");
+							cl.show(containedIn,"Congrats");
+						}
+						
+						f2.setSize((int)((Math.random()*200)+30),(int)((Math.random()*100)+30));
+						f2.setLocation((int)(Math.random()*getWidth()), (int)(Math.random()*getHeight()));
+						
+						
+					}
+			
+				});
+		
+		Fish f3 = new Fish();
+		f3.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight())); 
+		f3.setOpaque(false);
+		f3.setContentAreaFilled(false);
+		f3.setBorderPainted(true);
+		add(f3);
+		f3.addActionListener(new ActionListener()
+				{
+
+					public void actionPerformed(ActionEvent e) {
+						
+						numCaught++;
+						score.setText("Fish Caught: "+numCaught);
+						
+						if (numCaught>=3)
+						{
+							numCaught=0;
+							score.setText("Fish Caught: 0");
+							cl.show(containedIn,"Congrats");
+						}
+						
+						f3.setSize((int)((Math.random()*200)+30),(int)((Math.random()*100)+30));
+						f3.setLocation((int)(Math.random()*getWidth()), (int)(Math.random()*getHeight()));
+						
+						
+					}
+			
+				});
+		
+		//trying to make it invisble but still clickable
+		// This makes the game super hard btw, so maybe we shouldnt do it? what do you think
+		// Right now you only need 3 fish to win
+		
+		
+		
+		
 		
 		/*
 		 * Added an actionListener to the fish that causes it to change location and size according to initial bounds
@@ -45,27 +141,7 @@ public class Pond extends JPanel implements ActionListener
 		 * -Casey
 		 */
 		
-		f1.addActionListener(new ActionListener()
-				{
-
-					public void actionPerformed(ActionEvent e) {
-						
-						numCaught++;
-						score.setText("Fish Caught: "+numCaught);
-						
-						if (numCaught>=10)
-						{
-							numCaught=0;
-							cl.show(containedIn,"Congrats");
-						}
-						
-						f1.setSize((int)((Math.random()*200)+30),(int)((Math.random()*100)+30));
-						f1.setLocation((int)(Math.random()*getWidth()), (int)(Math.random()*getHeight()));
-						
-						
-					}
-			
-				});
+		
 	
 	/*
 	 * Since I made the Fish extend JButtons, we can add ActionListeners to them so that they make a JPanel that pops uo that says "Congrats!" or something like that
@@ -78,10 +154,6 @@ public class Pond extends JPanel implements ActionListener
 	 * a fish when they press enter. Much like the Pong project. It would be harder, but it would make it look better.
 	 */
 	}
-	public void actionPerformed(ActionEvent e) 
-	{
-		
-		
-	}
+	
 
 }
