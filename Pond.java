@@ -8,8 +8,13 @@ import javax.swing.JPanel;
 
 public class Pond extends JPanel implements ActionListener
 {
+	private int numCaught;
+	
+	
+	
 	public Pond(CardLayout cl,JPanel containedIn)
 	{
+		
 		this.setSize(1000, 800);
 		this.setLayout(null);
 		this.setBackground(Color.CYAN);
@@ -39,6 +44,15 @@ public class Pond extends JPanel implements ActionListener
 				{
 
 					public void actionPerformed(ActionEvent e) {
+						
+						numCaught++;
+						
+						if (numCaught>=10)
+						{
+							numCaught=0;
+							cl.show(containedIn,"Congrats");
+						}
+						
 						f1.setSize((int)((Math.random()*200)+30),(int)((Math.random()*100)+30));
 						f1.setLocation((int)(Math.random()*getWidth()), (int)(Math.random()*getHeight()));
 						

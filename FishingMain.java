@@ -49,10 +49,30 @@ public class FishingMain extends JFrame
 	
 		JPanel pondScreen = new Pond(cl, overall);
 		
+		JPanel congratsScreen = new JPanel();
+		congratsScreen.setBounds(200,200,500,300);
+		congratsScreen.setLayout(new GridBagLayout());
+		GridBagConstraints gbc2 = new GridBagConstraints();
 		
+		JLabel congrats = new JLabel("Congrats! You Won!");
+		congratsScreen.add(congrats,gbc2);
+		
+		JButton replay = new JButton("Back To Menu");
+		replay.addActionListener(new ActionListener() {
+
+			
+			public void actionPerformed(ActionEvent e) 
+			{
+				cl.show(overall, "Start");
+			}
+			
+		});
+		gbc2.gridx++;
+		congratsScreen.add(replay,gbc2);
 		
 		overall.add(startScreen, "Start");
 		overall.add(pondScreen, "Pond");
+		overall.add(congratsScreen, "Congrats");
 		
 		cl.show(overall,"Start");
 		

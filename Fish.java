@@ -22,7 +22,7 @@ public class Fish extends JButton
 		Graphics2D g2 = (Graphics2D) g;
 		
 		//The fish are only red right now to make it easier to find them
-		g2.setColor(Color.RED);
+		g2.setColor(Color.CYAN);
 		g2.fill(fish);
 	}
 	
