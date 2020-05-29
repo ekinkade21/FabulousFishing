@@ -1,4 +1,5 @@
 import java.awt.CardLayout;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -22,7 +23,6 @@ public class FishingMain extends JFrame
 		CardLayout cl = new CardLayout();
 		overall.setLayout(cl);
 		
-		//We can make this look better visually later
 		
 		JPanel startScreen = new JPanel();
 		startScreen.setSize(1000, 800);
@@ -30,6 +30,7 @@ public class FishingMain extends JFrame
 		GridBagConstraints gbc = new GridBagConstraints();
 		
 		JLabel title = new JLabel("Welcome to Fabulous Fishing!!");
+		title.setFont(new Font("Serif", Font.PLAIN, 75));
 		startScreen.add(title,gbc);
 		
 		gbc.gridx++;
@@ -44,7 +45,7 @@ public class FishingMain extends JFrame
 				}
 				
 			});
-		
+		startButton.setSize(600, 200);
 		startScreen.add(startButton,gbc);
 	
 		JPanel pondScreen = new Pond(cl, overall);
@@ -55,6 +56,7 @@ public class FishingMain extends JFrame
 		GridBagConstraints gbc2 = new GridBagConstraints();
 		
 		JLabel congrats = new JLabel("Congrats! You Won!");
+		congrats.setFont(new Font("Serif", Font.PLAIN, 75));
 		congratsScreen.add(congrats,gbc2);
 		
 		JButton replay = new JButton("Back To Menu");

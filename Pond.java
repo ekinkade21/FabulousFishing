@@ -1,5 +1,6 @@
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -25,18 +26,12 @@ public class Pond extends JPanel
 		this.setBackground(Color.CYAN);
 		
 		JLabel score = new JLabel("Fish Caught: "+numCaught);
-		score.setBounds(850,10,100,40);
+		score.setBounds(750,10,225,40);
+		score.setFont(new Font("Serif", Font.PLAIN, 30));
 		add(score);
 		
 		
-//		JToggleButton trying = new JToggleButton();
-//		trying.setBounds(10,10,100,100);
 		ImageIcon dis = new ImageIcon("FishPic.png");
-//		Image newpic = dis.getImage().getScaledInstance(trying.getWidth(), trying.getHeight(), Image.SCALE_SMOOTH);
-//		ImageIcon disIcon = new ImageIcon(newpic);
-//		trying.setIcon(disIcon);
-//		add(trying);
-		
 		
 		/*
 		 *  I am trying to make a fish that is a random size within reason, and a random location, without getting out of bounds
@@ -137,20 +132,14 @@ public class Pond extends JPanel
 				});
 		
 		
-		//trying to make it invisble but still clickable
-		// This makes the game super hard btw, so maybe we shouldnt do it? what do you think
-		// Right now you only need 3 fish to win
-		
-		
-		
-		
 		
 		/*
 		 * Added an actionListener to the fish that causes it to change location and size according to initial bounds
 		 * Need to add code to make sure it doesn't stretch off of the screen
 		 * If you want, you can add code to change the card displayed or create some sort of integer that increments to count the number of fish caught
-		 * 	You could make it so that once a certain amount of fish are caught, the congratulations screen pops up.
-		 * I'm not sure how to do it, but we need to repaint the object so that it fills the new bounds (i.e. if the previous fish was 50x50 and the new one is 100x100, only 50x50 out of the total area is painted.)
+		 * You could make it so that once a certain amount of fish are caught, the congratulations screen pops up.
+		 * I'm not sure how to do it, but we need to repaint the object so that it fills the new bounds (i.e. if the previous fish was 50x50 
+		 * and the new one is 100x100, only 50x50 out of the total area is painted.)
 		 * 
 		 * I think just using an actionListener would be easier than a cursor, but either would work; it's just preference
 		 * -Casey
