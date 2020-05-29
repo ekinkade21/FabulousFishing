@@ -29,9 +29,13 @@ public class Pond extends JPanel
 		add(score);
 		
 		
-		
-	
-		
+//		JToggleButton trying = new JToggleButton();
+//		trying.setBounds(10,10,100,100);
+		ImageIcon dis = new ImageIcon("FishPic.png");
+//		Image newpic = dis.getImage().getScaledInstance(trying.getWidth(), trying.getHeight(), Image.SCALE_SMOOTH);
+//		ImageIcon disIcon = new ImageIcon(newpic);
+//		trying.setIcon(disIcon);
+//		add(trying);
 		
 		
 		/*
@@ -43,13 +47,11 @@ public class Pond extends JPanel
 
 		Fish f1 = new Fish();
 		f1.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight())); 
-		ImageIcon dis = new ImageIcon("FishPic.png");
-		Image newpic = dis.getImage().getScaledInstance(f1.getWidth(), f1.getHeight(), Image.SCALE_SMOOTH);
-		ImageIcon disIcon = new ImageIcon(newpic);
 		
-		f1.setIcon(disIcon);
+		f1.setIcon(new ImageIcon(dis.getImage().getScaledInstance(f1.getWidth(), f1.getHeight(), Image.SCALE_SMOOTH)));
+		
+		
 		add(f1);
-		
 		f1.addActionListener(new ActionListener()
 				{
 
@@ -67,7 +69,7 @@ public class Pond extends JPanel
 						
 						f1.setSize((int)((Math.random()*200)+30),(int)((Math.random()*100)+30));
 						f1.setLocation((int)(Math.random()*getWidth()), (int)(Math.random()*getHeight()));
-						
+						f1.setIcon(new ImageIcon(dis.getImage().getScaledInstance(f1.getWidth(), f1.getHeight(), Image.SCALE_SMOOTH)));
 						
 					}
 			
@@ -77,9 +79,9 @@ public class Pond extends JPanel
 		
 		Fish f2 = new Fish();
 		f2.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight())); 
-		f2.setOpaque(false);
-		f2.setContentAreaFilled(false);
-		f2.setBorderPainted(true);
+		
+		f2.setIcon(new ImageIcon(dis.getImage().getScaledInstance(f2.getWidth(), f2.getHeight(), Image.SCALE_SMOOTH)));
+		
 		add(f2);
 		f2.addActionListener(new ActionListener()
 				{
@@ -98,7 +100,7 @@ public class Pond extends JPanel
 						
 						f2.setSize((int)((Math.random()*200)+30),(int)((Math.random()*100)+30));
 						f2.setLocation((int)(Math.random()*getWidth()), (int)(Math.random()*getHeight()));
-						
+						f2.setIcon(new ImageIcon(dis.getImage().getScaledInstance(f2.getWidth(), f2.getHeight(), Image.SCALE_SMOOTH)));
 						
 					}
 			
@@ -106,10 +108,10 @@ public class Pond extends JPanel
 		
 		
 		Fish f3 = new Fish();
-		f3.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight())); 
-		f3.setOpaque(false);
-		f3.setContentAreaFilled(false);
-		f3.setBorderPainted(true);
+		f3.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight()));
+		
+		f3.setIcon(new ImageIcon(dis.getImage().getScaledInstance(f3.getWidth(), f3.getHeight(), Image.SCALE_SMOOTH)));
+		
 		add(f3);
 		f3.addActionListener(new ActionListener()
 				{
@@ -128,7 +130,7 @@ public class Pond extends JPanel
 						
 						f3.setSize((int)((Math.random()*200)+30),(int)((Math.random()*100)+30));
 						f3.setLocation((int)(Math.random()*getWidth()), (int)(Math.random()*getHeight()));
-						
+						f3.setIcon(new ImageIcon(dis.getImage().getScaledInstance(f3.getWidth(), f3.getHeight(), Image.SCALE_SMOOTH)));
 						
 					}
 			

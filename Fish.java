@@ -18,12 +18,13 @@ public class Fish extends JToggleButton
 		this.setFocusable(false);
 	}
 	
-	public void paintComponent(Graphics  g)
-	{
-		Graphics2D g2 = (Graphics2D) g;
-		
-		g2.setColor(Color.CYAN);
-		g2.fill(fish);
-	}
+	
+//	public void paintComponent(Graphics  g)
+//	{
+//		Graphics2D g2 = (Graphics2D) g;
+//		
+//		g2.setColor(Color.CYAN);
+//		g2.fill(fish);
+//	}
 	
 }
