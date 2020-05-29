@@ -4,8 +4,9 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 import javax.swing.JButton;
+import javax.swing.JToggleButton;
 
-public class Fish extends JButton
+public class Fish extends JToggleButton
 {
 	//The fish are only rectangles right now, maybe we can make them look better at the end, but i think its fine for now
 	

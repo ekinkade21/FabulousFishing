@@ -1,11 +1,15 @@
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JToggleButton;
 
 public class Pond extends JPanel 
 {
@@ -24,24 +28,28 @@ public class Pond extends JPanel
 		score.setBounds(850,10,100,40);
 		add(score);
 		
+		
+		
+	
+		
+		
+		
 		/*
 		 *  I am trying to make a fish that is a random size within reason, and a random location, without getting out of bounds
 		 *  right now I have it so the fish's size is determined in the Fish class when a fish object is created. But rn I am determining the location 
 		 *  of it in this class.
 		 *  I was planning on adding 3 fish initially.
 		 */
-		
-		//trying to make it invisble but still clickable
-		// This makes the game super hard btw, so maybe we shouldnt do it? what do you think
-		// Right now you only need 3 fish to win
-		
-		//the setBorderPainted is set to True for now, but if you want fish to be invisible, you set all 3 fish to false for the border
+
 		Fish f1 = new Fish();
 		f1.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight())); 
-		f1.setOpaque(false);
-		f1.setContentAreaFilled(false);
-		f1.setBorderPainted(true);
+		ImageIcon dis = new ImageIcon("FishPic.png");
+		Image newpic = dis.getImage().getScaledInstance(f1.getWidth(), f1.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon disIcon = new ImageIcon(newpic);
+		
+		f1.setIcon(disIcon);
 		add(f1);
+		
 		f1.addActionListener(new ActionListener()
 				{
 
@@ -50,7 +58,7 @@ public class Pond extends JPanel
 						numCaught++;
 						score.setText("Fish Caught: "+numCaught);
 						
-						if (numCaught>=3)
+						if (numCaught>=10)
 						{
 							numCaught=0;
 							score.setText("Fish Caught: 0");
@@ -64,6 +72,9 @@ public class Pond extends JPanel
 					}
 			
 				});
+		
+		
+		
 		Fish f2 = new Fish();
 		f2.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight())); 
 		f2.setOpaque(false);
@@ -78,7 +89,7 @@ public class Pond extends JPanel
 						numCaught++;
 						score.setText("Fish Caught: "+numCaught);
 						
-						if (numCaught>=3)
+						if (numCaught>=10)
 						{
 							numCaught=0;
 							score.setText("Fish Caught: 0");
@@ -92,6 +103,7 @@ public class Pond extends JPanel
 					}
 			
 				});
+		
 		
 		Fish f3 = new Fish();
 		f3.setLocation((int)(Math.random()*this.getWidth()), (int)(Math.random()*this.getHeight())); 
@@ -107,7 +119,7 @@ public class Pond extends JPanel
 						numCaught++;
 						score.setText("Fish Caught: "+numCaught);
 						
-						if (numCaught>=3)
+						if (numCaught>=10)
 						{
 							numCaught=0;
 							score.setText("Fish Caught: 0");
@@ -121,6 +133,7 @@ public class Pond extends JPanel
 					}
 			
 				});
+		
 		
 		//trying to make it invisble but still clickable
 		// This makes the game super hard btw, so maybe we shouldnt do it? what do you think
